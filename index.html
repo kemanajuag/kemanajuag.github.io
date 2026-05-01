@@ -17,300 +17,108 @@
   --bg:      #f8fafc;
   --white:   #ffffff;
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.7;
-}
-
+body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.7; }
 a { color: inherit; text-decoration: none; }
 
-/* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 0 2rem;
-  height: 60px;
+  padding: 0 2rem; height: 60px;
   display: flex; align-items: center; justify-content: space-between;
 }
-
-.nav-logo {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.2rem;
-  color: var(--ink);
-}
+.nav-logo { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--ink); }
 .nav-logo span { color: var(--blue2); }
-
-.nav-links {
-  display: flex; gap: 2rem; list-style: none;
-}
-.nav-links a {
-  font-size: 0.85rem; font-weight: 500;
-  color: var(--muted);
-  transition: color 0.2s;
-}
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--muted); transition: color 0.2s; }
 .nav-links a:hover { color: var(--blue2); }
 
-/* ── SECTIONS ── */
 section { padding: 6rem 2rem; max-width: 900px; margin: 0 auto; }
 
-/* ── HERO ── */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center;
-  padding-top: 80px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
+#hero { min-height: 100vh; display: flex; align-items: center; padding-top: 80px; max-width: 900px; margin: 0 auto; }
 .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-
-.hero-text { }
-
-.hero-badge {
-  display: inline-block;
-  background: var(--blue3);
-  color: var(--blue2);
-  font-size: 0.78rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 20px;
-  margin-bottom: 1.5rem;
-}
-
-.hero-text h1 {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  line-height: 1.1;
-  color: var(--ink);
-  margin-bottom: 1rem;
-}
-
-.hero-text h1 em {
-  font-style: italic;
-  color: var(--blue2);
-}
-
-.hero-desc {
-  font-size: 1.05rem; color: var(--ink2);
-  margin-bottom: 2rem;
-  max-width: 420px;
-}
-
+.hero-badge { display: inline-block; background: var(--blue3); color: var(--blue2); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 1.5rem; }
+.hero-text h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); line-height: 1.1; color: var(--ink); margin-bottom: 1rem; }
+.hero-text h1 em { font-style: italic; color: var(--blue2); }
+.hero-desc { font-size: 1.05rem; color: var(--ink2); margin-bottom: 2rem; max-width: 420px; }
 .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem; font-weight: 600;
-  padding: 12px 24px; border-radius: 8px;
-  transition: all 0.2s; cursor: pointer; border: none;
-}
-.btn-primary {
-  background: var(--blue2); color: #fff;
-}
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 600; padding: 12px 24px; border-radius: 8px; transition: all 0.2s; cursor: pointer; border: none; }
+.btn-primary { background: var(--blue2); color: #fff; }
 .btn-primary:hover { background: var(--blue); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(37,99,235,0.3); }
-
-.btn-outline {
-  background: transparent; color: var(--ink);
-  border: 1.5px solid var(--border);
-}
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
 .btn-outline:hover { border-color: var(--blue2); color: var(--blue2); transform: translateY(-1px); }
 
-.hero-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 32px rgba(15,23,42,0.08);
-}
-
-.hero-card-title {
-  font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 1.25rem;
-}
-
-.skill-tag {
-  display: inline-block;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  color: var(--ink2);
-  font-size: 0.82rem; font-weight: 500;
-  padding: 5px 12px; border-radius: 6px;
-  margin: 4px;
-  transition: all 0.2s;
-}
-.skill-tag:hover { background: var(--blue3); border-color: var(--blue2); color: var(--blue2); }
+.hero-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; box-shadow: 0 8px 32px rgba(15,23,42,0.08); }
+.hero-card-title { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+.skill-tag { display: inline-block; background: var(--bg); border: 1px solid var(--border); color: var(--ink2); font-size: 0.82rem; font-weight: 500; padding: 5px 12px; border-radius: 6px; margin: 4px; transition: all 0.2s; }
 .skill-tag.highlight { background: var(--blue3); border-color: var(--blue2); color: var(--blue2); }
-
-.hero-stats {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1rem; margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-}
-.stat-num {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.8rem; color: var(--blue2);
-}
+.hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.stat-num { font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: var(--blue2); }
 .stat-label { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
 
-/* ── À PROPOS ── */
-.section-label {
-  font-size: 0.75rem; font-weight: 600;
-  letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--blue2); margin-bottom: 0.75rem;
-}
-.section-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  line-height: 1.2; margin-bottom: 1.5rem;
-}
+.section-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--blue2); margin-bottom: 0.75rem; }
+.section-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; margin-bottom: 1.5rem; }
 
 .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 4rem; align-items: start; }
 .about-text p { color: var(--ink2); margin-bottom: 1rem; }
-
 .info-list { list-style: none; }
-.info-list li {
-  display: flex; align-items: center; gap: 10px;
-  padding: 0.6rem 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
-}
+.info-list li { display: flex; align-items: center; gap: 10px; padding: 0.6rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
 .info-list li:last-child { border-bottom: none; }
 .info-icon { font-size: 1rem; width: 24px; text-align: center; }
 .info-label { color: var(--muted); font-size: 0.8rem; display: block; }
 .info-val { color: var(--ink); font-weight: 500; }
 
-/* ── PROJETS ── */
 #projets { background: var(--white); max-width: 100%; padding: 6rem 0; }
 #projets .inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-
 .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
-
-.project-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.75rem;
-  transition: all 0.25s;
-  position: relative;
-  overflow: hidden;
-}
-.project-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0;
-  height: 3px; background: var(--blue2);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.3s;
-}
+.project-card { background: var(--bg); border: 1px solid var(--border); border-radius: 12px; padding: 1.75rem; transition: all 0.25s; position: relative; overflow: hidden; }
+.project-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--blue2); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
 .project-card:hover { box-shadow: 0 8px 28px rgba(15,23,42,0.1); transform: translateY(-3px); }
 .project-card:hover::before { transform: scaleX(1); }
-
 .project-icon { font-size: 2rem; margin-bottom: 1rem; }
-.project-title {
-  font-family: 'DM Serif Display', serif;
-  font-size: 1.2rem; margin-bottom: 0.5rem;
-}
+.project-title { font-family: 'DM Serif Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
 .project-desc { font-size: 0.88rem; color: var(--ink2); margin-bottom: 1.25rem; line-height: 1.6; }
-
 .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1.25rem; }
-.project-tag {
-  font-size: 0.72rem; font-weight: 600;
-  background: var(--blue3); color: var(--blue2);
-  padding: 3px 10px; border-radius: 4px;
-}
-
+.project-tag { font-size: 0.72rem; font-weight: 600; background: var(--blue3); color: var(--blue2); padding: 3px 10px; border-radius: 4px; }
 .project-links { display: flex; gap: 1rem; }
-.project-links a {
-  font-size: 0.82rem; font-weight: 600;
-  color: var(--blue2);
-  display: flex; align-items: center; gap: 5px;
-  transition: color 0.2s;
-}
+.project-links a { font-size: 0.82rem; font-weight: 600; color: var(--blue2); display: flex; align-items: center; gap: 5px; transition: color 0.2s; }
 .project-links a:hover { color: var(--blue); }
 
-/* ── COMPÉTENCES ── */
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-
-.skill-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
+.skill-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
 .skill-card-icon { font-size: 1.75rem; margin-bottom: 0.75rem; }
-.skill-card-title {
-  font-weight: 600; font-size: 0.9rem;
-  margin-bottom: 0.75rem; color: var(--ink);
-}
+.skill-card-title { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--ink); }
 .skill-list { list-style: none; }
-.skill-list li {
-  font-size: 0.85rem; color: var(--ink2);
-  padding: 3px 0;
-  display: flex; align-items: center; gap: 6px;
-}
+.skill-list li { font-size: 0.85rem; color: var(--ink2); padding: 3px 0; display: flex; align-items: center; gap: 6px; }
 .skill-list li::before { content: '→'; color: var(--blue2); font-size: 0.75rem; }
 
-/* ── EXPÉRIENCE ── */
 .exp-list { margin-top: 3rem; }
-.exp-item {
-  display: grid; grid-template-columns: 140px 1fr;
-  gap: 2rem; padding: 1.75rem 0;
-  border-bottom: 1px solid var(--border);
-}
+.exp-item { display: grid; grid-template-columns: 160px 1fr; gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid var(--border); }
 .exp-item:last-child { border-bottom: none; }
 .exp-date { font-size: 0.82rem; color: var(--muted); font-weight: 500; padding-top: 3px; }
 .exp-role { font-weight: 600; font-size: 1rem; margin-bottom: 3px; }
-.exp-company { font-size: 0.88rem; color: var(--blue2); font-weight: 500; }
+.exp-company { font-size: 0.88rem; color: var(--blue2); font-weight: 500; margin-bottom: 6px; }
+.exp-desc { font-size: 0.85rem; color: var(--ink2); line-height: 1.6; }
 
-/* ── CONTACT ── */
 #contact { background: var(--ink); max-width: 100%; padding: 6rem 0; }
 #contact .inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; text-align: center; }
 #contact .section-label { color: var(--blue3); }
 #contact .section-title { color: var(--white); }
 #contact p { color: #94a3b8; margin-bottom: 2.5rem; }
-
 .contact-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-.contact-btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  color: var(--white);
-  font-size: 0.88rem; font-weight: 500;
-  padding: 12px 24px; border-radius: 8px;
-  transition: all 0.2s;
-}
+.contact-btn { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: var(--white); font-size: 0.88rem; font-weight: 500; padding: 12px 24px; border-radius: 8px; transition: all 0.2s; }
 .contact-btn:hover { background: var(--blue2); border-color: var(--blue2); transform: translateY(-2px); }
 
-/* ── FOOTER ── */
-footer {
-  background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08);
-  text-align: center; padding: 1.5rem;
-  font-size: 0.8rem; color: #475569;
-}
+footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); text-align: center; padding: 1.5rem; font-size: 0.8rem; color: #475569; }
 
-/* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 .hero-text { animation: fadeUp 0.7s ease both; }
 .hero-card { animation: fadeUp 0.7s 0.2s ease both; }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .about-grid { grid-template-columns: 1fr; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .hero-inner, .about-grid, .projects-grid { grid-template-columns: 1fr; gap: 2rem; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
   .nav-links { display: none; }
@@ -319,19 +127,17 @@ footer {
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Ayhan <span>Mese</span></div>
   <ul class="nav-links">
     <li><a href="#apropos">À propos</a></li>
     <li><a href="#projets">Projets</a></li>
     <li><a href="#competences">Compétences</a></li>
-    <li><a href="#experience">Expérience</a></li>
+    <li><a href="#experience">Parcours</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-text">
@@ -348,7 +154,14 @@ footer {
     </div>
 
     <div class="hero-card">
-      <div style="text-align:center; margin-bottom:1.5rem;"><img src="photo.jpg" alt="Ayhan Mese" style="width:110px; height:110px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid var(--blue3); box-shadow:0 4px 16px rgba(37,99,235,0.15);"><div style="margin-top:0.75rem; font-weight:600; color:var(--ink);">Ayhan Mese</div><div style="font-size:0.82rem; color:var(--muted);">Développeur Web Python / Flask</div></div><div class="hero-card-title">Stack technique</div>
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <img src="photo.jpg" alt="Ayhan Mese"
+             style="width:110px; height:110px; border-radius:50%; object-fit:cover; object-position:top;
+                    border:3px solid var(--blue3); box-shadow:0 4px 16px rgba(37,99,235,0.15);">
+        <div style="margin-top:0.75rem; font-weight:600; color:var(--ink);">Ayhan Mese</div>
+        <div style="font-size:0.82rem; color:var(--muted);">Développeur Web Python / Flask</div>
+      </div>
+      <div class="hero-card-title">Stack technique</div>
       <div>
         <span class="skill-tag highlight">Python</span>
         <span class="skill-tag highlight">Flask</span>
@@ -376,90 +189,67 @@ footer {
   </div>
 </section>
 
-<!-- À PROPOS -->
 <section id="apropos">
   <div class="about-grid">
     <div class="about-text">
       <div class="section-label">À propos</div>
       <h2 class="section-title">Qui suis-je ?</h2>
       <p>
-        Développeur web orienté <strong>back-end</strong> avec une expérience pratique en
-        <strong>Python</strong> et <strong>Flask</strong>. Passionné par le développement
-        d'applications web complètes, de la conception à la mise en ligne.
+        Développeur web <strong>autodidacte</strong>, passionné par Python et Flask.
+        J'ai développé plusieurs applications web complètes sur mon temps libre,
+        de la conception à la mise en ligne — incluant authentification, bases de données
+        et déploiement sur serveur.
       </p>
       <p>
         J'utilise des outils d'intelligence artificielle comme <strong>Claude</strong> et
-        <strong>ChatGPT</strong> pour optimiser mon workflow de développement, corriger
-        des bugs et améliorer la qualité du code.
+        <strong>ChatGPT</strong> pour optimiser mon développement, corriger des bugs et
+        améliorer la qualité du code — une compétence clé dans le développement moderne.
       </p>
       <p>
-        Titulaire d'un Graduat en Informatique en Belgique, je combine une solide
-        base technique avec une forte capacité d'adaptation et d'apprentissage autonome.
+        Titulaire d'un <strong>Graduat en Informatique</strong>, je cherche à évoluer
+        professionnellement vers le développement web.
       </p>
     </div>
     <div>
       <ul class="info-list">
         <li>
           <span class="info-icon">📍</span>
-          <div>
-            <span class="info-label">Localisation</span>
-            <span class="info-val">Soignies, Belgique</span>
-          </div>
+          <div><span class="info-label">Localisation</span><span class="info-val">Soignies, Belgique</span></div>
         </li>
         <li>
           <span class="info-icon">🎓</span>
-          <div>
-            <span class="info-label">Formation</span>
-            <span class="info-val">Graduat en Informatique</span>
-          </div>
+          <div><span class="info-label">Formation</span><span class="info-val">Graduat en Informatique</span></div>
         </li>
         <li>
-          <span class="info-icon">💼</span>
-          <div>
-            <span class="info-label">Disponibilité</span>
-            <span class="info-val">Ouvert aux opportunités</span>
-          </div>
+          <span class="info-icon">💡</span>
+          <div><span class="info-label">Profil</span><span class="info-val">Développeur autodidacte</span></div>
         </li>
         <li>
           <span class="info-icon">🌍</span>
-          <div>
-            <span class="info-label">Langues</span>
-            <span class="info-val">FR · EN · NL · TR</span>
-          </div>
+          <div><span class="info-label">Langues</span><span class="info-val">FR · EN · NL · TR</span></div>
         </li>
         <li>
           <span class="info-icon">📧</span>
-          <div>
-            <span class="info-label">Email</span>
-            <span class="info-val">csm12121@yahoo.com</span>
-          </div>
+          <div><span class="info-label">Email</span><span class="info-val">csm12121@yahoo.com</span></div>
         </li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- PROJETS -->
 <div id="projets">
   <div class="inner">
     <div class="section-label">Portfolio</div>
     <h2 class="section-title">Mes projets</h2>
-
     <div class="projects-grid">
 
       <div class="project-card">
         <div class="project-icon">📝</div>
         <div class="project-title">Blog Personnel — CMS</div>
-        <p class="project-desc">
-          Application de blog complète avec panel admin sécurisé.
-          Création et suppression d'articles, support YouTube embed,
-          upload d'images, base de données SQLite.
-        </p>
+        <p class="project-desc">Application de blog avec panel admin sécurisé, création/suppression d'articles, support YouTube, upload d'images et base de données SQLite.</p>
         <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Flask</span>
-          <span class="project-tag">SQLite</span>
-          <span class="project-tag">Admin Auth</span>
+          <span class="project-tag">Python</span><span class="project-tag">Flask</span>
+          <span class="project-tag">SQLite</span><span class="project-tag">Auth Admin</span>
         </div>
         <div class="project-links">
           <a href="https://kemanoju.pythonanywhere.com" target="_blank">🌐 Demo</a>
@@ -470,16 +260,10 @@ footer {
       <div class="project-card">
         <div class="project-icon">⚽</div>
         <div class="project-title">Sport Wallonia</div>
-        <p class="project-desc">
-          Plateforme de suivi des matchs locaux en Hainaut & Soignies.
-          Tennis, Football, Volleyball, Padel, Basketball.
-          Filtres par sport, admin avec suppression, RGPD.
-        </p>
+        <p class="project-desc">Plateforme de suivi des matchs locaux en Hainaut & Soignies. Tennis, Football, Volleyball, Padel, Basketball. Filtres, admin, RGPD.</p>
         <div class="project-tags">
-          <span class="project-tag">Python</span>
-          <span class="project-tag">Flask</span>
-          <span class="project-tag">SQLite</span>
-          <span class="project-tag">RGPD</span>
+          <span class="project-tag">Python</span><span class="project-tag">Flask</span>
+          <span class="project-tag">SQLite</span><span class="project-tag">RGPD</span>
         </div>
         <div class="project-links">
           <a href="https://kemanoju2.pythonanywhere.com" target="_blank">🌐 Demo</a>
@@ -490,14 +274,9 @@ footer {
       <div class="project-card">
         <div class="project-icon">🏛️</div>
         <div class="project-title">Smyrna — Blog Historique</div>
-        <p class="project-desc">
-          Blog dédié à l'histoire de l'Anatolie antique et de la Grèce.
-          Projet Flask avec interface élégante.
-        </p>
+        <p class="project-desc">Blog dédié à l'histoire de l'Anatolie antique et de la Grèce. Projet Flask avec interface élégante.</p>
         <div class="project-tags">
-          <span class="project-tag">Flask</span>
-          <span class="project-tag">Python</span>
-          <span class="project-tag">HTML/CSS</span>
+          <span class="project-tag">Flask</span><span class="project-tag">Python</span><span class="project-tag">HTML/CSS</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/KemanajuAg/smyrna" target="_blank">💻 GitHub</a>
@@ -507,14 +286,9 @@ footer {
       <div class="project-card">
         <div class="project-icon">✈️</div>
         <div class="project-title">Voyage Anatolie</div>
-        <p class="project-desc">
-          Guide de voyage culturel sur la Turquie et la Grèce.
-          Site web statique avec design soigné.
-        </p>
+        <p class="project-desc">Guide de voyage culturel sur la Turquie et la Grèce. Site web avec design soigné.</p>
         <div class="project-tags">
-          <span class="project-tag">HTML5</span>
-          <span class="project-tag">CSS3</span>
-          <span class="project-tag">JavaScript</span>
+          <span class="project-tag">HTML5</span><span class="project-tag">CSS3</span><span class="project-tag">JavaScript</span>
         </div>
         <div class="project-links">
           <a href="https://github.com/KemanajuAg/voyage-anatolie" target="_blank">💻 GitHub</a>
@@ -525,118 +299,94 @@ footer {
   </div>
 </div>
 
-<!-- COMPÉTENCES -->
 <section id="competences">
   <div class="section-label">Expertise</div>
   <h2 class="section-title">Compétences techniques</h2>
-
   <div class="skills-grid">
     <div class="skill-card">
       <div class="skill-card-icon">🐍</div>
       <div class="skill-card-title">Langages</div>
-      <ul class="skill-list">
-        <li>Python</li>
-        <li>JavaScript</li>
-        <li>PHP</li>
-        <li>C / C++</li>
-      </ul>
+      <ul class="skill-list"><li>Python</li><li>JavaScript</li><li>PHP</li><li>C / C++</li></ul>
     </div>
     <div class="skill-card">
       <div class="skill-card-icon">⚡</div>
       <div class="skill-card-title">Web & Framework</div>
-      <ul class="skill-list">
-        <li>Flask</li>
-        <li>HTML5 / CSS3</li>
-        <li>Jinja2</li>
-        <li>SQLAlchemy</li>
-      </ul>
+      <ul class="skill-list"><li>Flask</li><li>HTML5 / CSS3</li><li>Jinja2</li><li>SQLAlchemy</li></ul>
     </div>
     <div class="skill-card">
       <div class="skill-card-icon">🗄️</div>
       <div class="skill-card-title">Bases de données</div>
-      <ul class="skill-list">
-        <li>SQLite</li>
-        <li>MySQL</li>
-        <li>Access</li>
-      </ul>
+      <ul class="skill-list"><li>SQLite</li><li>MySQL</li><li>Access</li></ul>
     </div>
     <div class="skill-card">
       <div class="skill-card-icon">🚀</div>
       <div class="skill-card-title">Déploiement</div>
-      <ul class="skill-list">
-        <li>PythonAnywhere</li>
-        <li>GitHub Pages</li>
-        <li>Git / GitHub</li>
-      </ul>
+      <ul class="skill-list"><li>PythonAnywhere</li><li>GitHub Pages</li><li>Git / GitHub</li></ul>
     </div>
     <div class="skill-card">
       <div class="skill-card-icon">🤖</div>
       <div class="skill-card-title">Outils IA</div>
-      <ul class="skill-list">
-        <li>Claude AI</li>
-        <li>ChatGPT</li>
-        <li>Debugging IA</li>
-      </ul>
+      <ul class="skill-list"><li>Claude AI</li><li>ChatGPT</li><li>Debugging IA</li></ul>
     </div>
     <div class="skill-card">
       <div class="skill-card-icon">💻</div>
       <div class="skill-card-title">Systèmes</div>
-      <ul class="skill-list">
-        <li>Linux</li>
-        <li>Windows</li>
-        <li>Bash</li>
-      </ul>
+      <ul class="skill-list"><li>Linux</li><li>Windows</li><li>Bash</li></ul>
     </div>
   </div>
 </section>
 
-<!-- EXPÉRIENCE -->
 <section id="experience" style="background:var(--white); max-width:100%; padding: 6rem 0;">
   <div style="max-width:900px; margin:0 auto; padding:0 2rem;">
     <div class="section-label">Parcours</div>
-    <h2 class="section-title">Expérience & Formation</h2>
-
+    <h2 class="section-title">Formation & Développement personnel</h2>
     <div class="exp-list">
+
       <div class="exp-item">
-        <div class="exp-date">2025 – Présent</div>
+        <div class="exp-date">Projets personnels</div>
         <div>
-          <div class="exp-role">Agent de sécurité</div>
-          <div class="exp-company">Securitas – OTAN, Belgique</div>
+          <div class="exp-role">Développeur Web autodidacte</div>
+          <div class="exp-company">Développement sur temps libre</div>
+          <div class="exp-desc">
+            Développement de plusieurs applications web complètes à domicile :
+            blog avec CMS, plateforme sportive locale, sites culturels.
+            De la conception au déploiement en ligne — authentification, bases de données,
+            RGPD, GitHub. Utilisation d'outils IA pour optimiser le code.
+          </div>
         </div>
       </div>
-      <div class="exp-item">
-        <div class="exp-date">2012 – 2023</div>
-        <div>
-          <div class="exp-role">Agent de sécurité VIP</div>
-          <div class="exp-company">Aéroport de Zaventem, Belgique</div>
-        </div>
-      </div>
-      <div class="exp-item">
-        <div class="exp-date">2007 – 2008</div>
-        <div>
-          <div class="exp-role">Informaticien</div>
-          <div class="exp-company">DAPHNE, Belgique</div>
-        </div>
-      </div>
+
       <div class="exp-item">
         <div class="exp-date">Formation</div>
         <div>
           <div class="exp-role">Graduat en Informatique</div>
           <div class="exp-company">Belgique</div>
+          <div class="exp-desc">Formation en informatique — programmation, bases de données, systèmes.</div>
         </div>
       </div>
+
       <div class="exp-item">
         <div class="exp-date">Formation</div>
         <div>
           <div class="exp-role">Graduat en Tourisme</div>
           <div class="exp-company">Université d'Ege, Turquie</div>
+          <div class="exp-desc">Compétences multilingues et interculturelles — FR, EN, NL, TR.</div>
         </div>
       </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2025 – Présent</div>
+        <div>
+          <div class="exp-role">Emploi actuel</div>
+          <div class="exp-company">Belgique</div>
+          <div class="exp-desc">En reconversion active vers le développement web.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <div id="contact">
   <div class="inner">
     <div class="section-label">Contact</div>
